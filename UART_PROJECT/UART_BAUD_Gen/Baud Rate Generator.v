@@ -1,13 +1,14 @@
+`timescale 1ns/1ns
+
 module uart_baud #
 (
     parameter CLKS_PER_BIT = 108
 )
 (
-    input         clk,
-    input         rst,
-    output reg    tick
+    input        clk,
+    input        rst,
+    output reg   tick
 );
-
     reg [$clog2(CLKS_PER_BIT)-1:0] counter;
 
     always @(posedge clk or posedge rst) begin
